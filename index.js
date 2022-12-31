@@ -9,7 +9,7 @@ let getComputerChoice = () => {
 let computerSelection = getComputerChoice()
 
 // This variable accept Player input and make it lower case
-let playerSelection = window.prompt('Enter').toLocaleLowerCase()
+let playerSelection = prompt('Enter').toLocaleLowerCase()
 
 
 // This Function takes randomly generate Rock, Paper, Scissors and Player input and log the result on the console
@@ -64,6 +64,7 @@ let game = () => {
     console.log(`You ${player}: Computer ${comp}: Tie!`)
   }
 }
+
 
 game()
 
