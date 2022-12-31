@@ -1,11 +1,11 @@
 //This Function return randomly Rock, Paper, Scissors
 let getComputerChoice = () => {
-  let choices = ["Rock", "Paper", "Scissors"]
-  let randomIndex = Math.floor(Math.random() * choices.length)
-  return randomStr = choices[randomIndex]
+  let compChoices = ["Rock", "Paper", "Scissors"]
+  let randomIndex = Math.floor(Math.random() * compChoices.length)
+  return randomStr = compChoices[randomIndex]
 }
 
-// This variable contain randomly generate Rock, Paper, Scissors
+// This variable contain Computer randomly generate Rock, Paper, Scissors
 let computerSelection = getComputerChoice()
 
 // This variable accept Player input and make it lower case
@@ -42,7 +42,7 @@ let playRound  = (computerSelection,playerSelection) => {
 };
 
 
-//This Function loop through playRound 5 times and log the result of the game
+//This Function loop through playRound Function 5 times and log the result of the game
 let game = () => {
   let player = 0;
   let comp = 0;
@@ -57,11 +57,11 @@ let game = () => {
     }
   }
   if(player < comp) {
-    console.log(`You ${player}: Computer ${comp}: Computer Win!`)
+    console.log(`You ${player}: Computer ${comp} : Computer Win!`)
   }else if (player > comp) {
-    console.log(`You ${player}: Computer ${comp}: You Win!`)
+    console.log(`You ${player}: Computer ${comp} : You Win!`)
   }else {
-    console.log(`You ${player}: Computer ${comp}: Tie!`)
+    console.log(`You ${player}: Computer ${comp} : Tie!`)
   }
 }
 
