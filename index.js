@@ -31,15 +31,15 @@ let playerSelection = (playerChoice) => {
   resetScore();
 
   let resultOneRound = playRound(getComputerChoice(), playerChoice);
-  resultDiv.textContent = resultOneRound;
+  resultDiv.innerHTML = resultOneRound;
 
   if (playerScore >= 0 || computerScore >= 0) {
     finalScore.textContent = "";
   }
-  if (resultOneRound.includes("Win")) {
+  if (resultOneRound.includes("win")) {
     playerScore += 1;
     playerScoreDiv.textContent = "You: " + playerScore;
-  } else if (resultOneRound.includes("Loose")) {
+  } else if (resultOneRound.includes("lose")) {
     computerScore += 1;
     computerScoreDiv.textContent = "Computer: " + computerScore;
   }
@@ -49,8 +49,10 @@ let playerSelection = (playerChoice) => {
 
 let checkWin = () => {
   if (playerScore >= 5) {
+    finalScore.style.color = "green";
     finalScore.textContent = "You have 5 points. Win!";
   } else if (computerScore >= 5) {
+    finalScore.style.color = "red";
     finalScore.textContent = "Computer have 5 points. Loose!";
   }
 };
@@ -67,21 +69,21 @@ let resetScore = () => {
 let playRound = (computerSelection, playerSelection) => {
   switch (true) {
     case playerSelection === computerSelection:
-      return `You choose ${playerSelection} the Computer choose ${computerSelection}, Tie`;
+      return `You select ${playerSelection} the Computer select ${computerSelection}, Tie`;
     case playerSelection === "Rock" && computerSelection === "Paper":
-      return `You choose Rock the Computer choose Paper, You Loose`;
+      return `You select Rock, the Computer selects Paper, You lose.`;
     case playerSelection === "Rock" && computerSelection === "Scissors":
-      return `You choose Rock the Computer choose Scissors, You Win`;
+      return `You select Rock, the Computer selects Scissors, You win.`;
 
     case playerSelection === "Paper" && computerSelection === "Rock":
-      return `You choose Paper the Computer choose Rock, You Win`;
+      return `You select Paper, the Computer selects Rock, You win.`;
     case playerSelection === "Paper" && computerSelection === "Scissors":
-      return `You choose Paper the Computer choose Scissors, You Loose`;
+      return `You select Paper, the Computer selects Rock, You lose.`;
 
     case playerSelection === "Scissors" && computerSelection === "Rock":
-      return `You choose Scissors the Computer choose Rock, You Loose`;
+      return `You select Paper, the Computer selects Rock, You lose.`;
     case playerSelection === "Scissors" && computerSelection === "Paper":
-      return `You choose Scissors the Computer choose Paper, You Win`;
+      return `You select Paper, the Computer selects Rock, You win.`;
     default:
       console.log("Try Again");
   }
