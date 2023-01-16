@@ -49,9 +49,9 @@ let playerSelection = (playerChoice) => {
 
 let checkWin = () => {
   if (playerScore >= 5) {
-    finalScore.textContent = "Win";
+    finalScore.textContent = "You have 5 points. Win!";
   } else if (computerScore >= 5) {
-    finalScore.textContent = "Loose";
+    finalScore.textContent = "Computer have 5 points. Loose!";
   }
 };
 
