@@ -14,14 +14,14 @@ const computerScoreDiv = document.querySelector(".computerScore");
 const finalScore = document.querySelector(".finalScore");
 
 playerRockBtn.addEventListener("click", () => {
-  return playerSelection("rock");
+  return playerSelection("Rock");
 });
 playerPaperBtn.addEventListener("click", () => {
-  return playerSelection("paper");
+  return playerSelection("Paper");
 });
 
 playerScissorsBtn.addEventListener("click", () => {
-  return playerSelection("scissors");
+  return playerSelection("Scissors");
 });
 
 let playerScore = 0;
@@ -66,25 +66,22 @@ let resetScore = () => {
 
 let playRound = (computerSelection, playerSelection) => {
   switch (true) {
-    case playerSelection === "rock" && computerSelection === "Rock":
-      return `You choose Rock the Computer choose ${computerSelection},Tie`;
-    case playerSelection === "rock" && computerSelection === "Paper":
-      return `You choose Rock the Computer choose ${computerSelection},You Loose`;
-    case playerSelection === "rock" && computerSelection === "Scissors":
-      return `You choose Rock the Computer choose ${computerSelection},You Win`;
+    case playerSelection === computerSelection:
+      return `You choose ${playerSelection} the Computer choose ${computerSelection}, Tie`;
+    case playerSelection === "Rock" && computerSelection === "Paper":
+      return `You choose Rock the Computer choose Paper, You Loose`;
+    case playerSelection === "Rock" && computerSelection === "Scissors":
+      return `You choose Rock the Computer choose Scissors, You Win`;
 
-    case playerSelection === "paper" && computerSelection === "Rock":
-      return `You choose Paper the Computer choose ${computerSelection},You Win`;
-    case playerSelection === "paper" && computerSelection === "Paper":
-      return `You choose Paper the Computer choose ${computerSelection},Tie`;
-    case playerSelection === "paper" && computerSelection === "Scissors":
-      return `You choose Paper the Computer choose ${computerSelection},You Loose`;
-    case playerSelection === "scissors" && computerSelection === "Rock":
-      return `You choose Scissors the Computer choose ${computerSelection},You Loose`;
-    case playerSelection === "scissors" && computerSelection === "Paper":
-      return `You choose Scissors the Computer choose ${computerSelection},You Win`;
-    case playerSelection === "scissors" && computerSelection === "Scissors":
-      return `You choose Scissors the Computer choose ${computerSelection},Tie`;
+    case playerSelection === "Paper" && computerSelection === "Rock":
+      return `You choose Paper the Computer choose Rock, You Win`;
+    case playerSelection === "Paper" && computerSelection === "Scissors":
+      return `You choose Paper the Computer choose Scissors, You Loose`;
+
+    case playerSelection === "Scissors" && computerSelection === "Rock":
+      return `You choose Scissors the Computer choose Rock, You Loose`;
+    case playerSelection === "Scissors" && computerSelection === "Paper":
+      return `You choose Scissors the Computer choose Paper, You Win`;
     default:
       console.log("Try Again");
   }
