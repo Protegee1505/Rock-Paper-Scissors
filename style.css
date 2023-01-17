@@ -1,0 +1,87 @@
+body {
+  background-image: url(/gox10low.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: roboto;
+}
+button {
+  color: white;
+  background-color: rgb(78, 124, 137);
+  width: 100px;
+  height: 50px;
+  margin-left: 12px;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(51, 93, 104);
+}
+
+.main,
+.show-winner {
+  width: 300px;
+  height: 200px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.playerChoice-container,
+.score-container,
+.final-score {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.result {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.playerScore,
+.computerScore {
+  margin: 15px;
+  color: white;
+}
+
+.playerScore {
+  color: green;
+}
+
+.player,
+.computer {
+  font-weight: bold;
+}
+
+.computerScore,
+.resultRound {
+  color: red;
+}
+
+.show-winner {
+  background-color: #e6e6e6;
+  width: 450px;
+  height: 250px;
+  border-radius: 8px;
+  display: none;
+  text-align: center;
+  padding: 10px;
+  align-items: center;
+}
+
+.playAgain-btn {
+  border: none;
+  background-color: gray;
+  width: 200px;
+}
+
+.final-score {
+  margin-bottom: 10px;
+}

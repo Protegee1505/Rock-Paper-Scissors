@@ -5,15 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <div class="result"></div>
-    <div class="playerScore">You: 0</div>
-    <div class="computerScore">Computer: 0</div>
-    <div class="finalScore"></div>
+    <div class="main">
+      <div class="playerChoice-container">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+      </div>
+      <div class="score-container">
+        <div class="score-container">
+          <div class="playerScore">You: 0</div>
+          <div class="computerScore">Computer: 0</div>
+        </div>
+      </div>
+      <div class="result"></div>
+    </div>
+    <div class="show-winner">
+      <h2 class="winner-text"></h2>
+      <h2>Final Score</h2>
+      <div class="final-score">
+        <h4 class="player-score"></h4>
+        <h4 class="computer-score"></h4>
+      </div>
+      <button class="playAgain-btn">Play Again</button>
+    </div>
     <script src="/index.js"></script>
   </body>
 </html>
