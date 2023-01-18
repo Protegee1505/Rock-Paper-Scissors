@@ -1,9 +1,3 @@
-let getComputerChoice = () => {
-  const compChoices = ["Rock", "Paper", "Scissors"];
-  let randomIndex = Math.floor(Math.random() * compChoices.length);
-  return (randomStr = compChoices[randomIndex]);
-};
-
 const playerRockBtn = document.querySelector(".rock");
 const playerPaperBtn = document.querySelector(".paper");
 const playerScissorsBtn = document.querySelector(".scissors");
@@ -15,6 +9,7 @@ const finalScore = document.querySelector(".finalScore");
 playerRockBtn.addEventListener("click", () => {
   return playerSelection("Rock");
 });
+
 playerPaperBtn.addEventListener("click", () => {
   return playerSelection("Paper");
 });
@@ -26,9 +21,15 @@ playerScissorsBtn.addEventListener("click", () => {
 let playerScore = 0;
 let computerScore = 0;
 
+let getComputerChoice = () => {
+  const compChoices = ["Rock", "Paper", "Scissors"];
+  let randomIndex = Math.floor(Math.random() * compChoices.length);
+  return (randomStr = compChoices[randomIndex]);
+};
+
 let playerSelection = (playerChoice) => {
   const resultOneRound = playRound(getComputerChoice(), playerChoice);
-  resultDiv.innerHTML = resultOneRound;
+  resultDiv.textContent = resultOneRound;
 
   if (resultOneRound.includes("win")) {
     playerScore += 1;
@@ -45,18 +46,18 @@ let checkWin = () => {
   const winnerTextBox = document.querySelector(".winner-text");
 
   if (playerScore >= 5) {
-    showWinBox();
+    showWinBoxFinal();
     winnerTextBox.style.color = "green";
     winnerTextBox.textContent = "You have 5 points. Win!";
   } else if (computerScore >= 5) {
-    showWinBox();
+    showWinBoxFinal();
     winnerTextBox.style.color = "red";
     winnerTextBox.textContent = "Computer have 5 points. Loose!";
   }
 };
 
-let showWinBox = () => {
-  const showWinBox = document.querySelector(".show-winner");
+let showWinBoxFinal = () => {
+  const showWinBox = document.querySelector(".show-winner-final");
   const resetScoreBtn = document.querySelector(".playAgain-btn");
   const playerScoreText = document.querySelector(".player-score");
   const computerScoreText = document.querySelector(".computer-score");
@@ -85,27 +86,29 @@ let resetScore = () => {
     computerScore = 0;
     playerScoreDiv.textContent = "You: " + playerScore;
     computerScoreDiv.textContent = "Computer: " + computerScore;
+    resultDiv.textContent = "Choose what you want to play.";
   }
 };
 
 let playRound = (computerSelection, playerSelection) => {
   switch (true) {
     case playerSelection === computerSelection:
-      return `You select ${playerSelection} the Computer select ${computerSelection}, Tie`;
+      return `You select ${playerSelection}. Computer select ${computerSelection}, Tie`;
+
     case playerSelection === "Rock" && computerSelection === "Paper":
-      return `You select Rock, the Computer selects Paper, You lose the round.`;
+      return `You select Rock. Computer selects Paper, You lose the round.`;
     case playerSelection === "Rock" && computerSelection === "Scissors":
-      return `You select Rock, the Computer selects Scissors, You win the round.`;
+      return `You select Rock. Computer selects Scissors, You win the round.`;
 
     case playerSelection === "Paper" && computerSelection === "Rock":
-      return `You select Paper, the Computer selects Rock, You win the round.`;
+      return `You select Paper. Computer selects Rock, You win the round.`;
     case playerSelection === "Paper" && computerSelection === "Scissors":
-      return `You select Paper, the Computer selects Rock, You lose the round.`;
+      return `You select Paper. Computer selects Rock, You lose the round.`;
 
     case playerSelection === "Scissors" && computerSelection === "Rock":
-      return `You select Paper, the Computer selects Rock, You lose the round.`;
+      return `You select Scissors. Computer selects Rock, You lose the round.`;
     case playerSelection === "Scissors" && computerSelection === "Paper":
-      return `You select Paper, the Computer selects Rock, You win the round.`;
+      return `You select Scissors. Computer selects Paper, You win the round.`;
     default:
       console.log("Try Again");
   }
