@@ -103,7 +103,7 @@ let playRound = (computerSelection, playerSelection) => {
     case playerSelection === "Paper" && computerSelection === "Rock":
       return `You select Paper. Computer selects Rock, You win the round.`;
     case playerSelection === "Paper" && computerSelection === "Scissors":
-      return `You select Paper. Computer selects Rock, You lose the round.`;
+      return `You select Paper. Computer selects Scissors, You lose the round.`;
 
     case playerSelection === "Scissors" && computerSelection === "Rock":
       return `You select Scissors. Computer selects Rock, You lose the round.`;
