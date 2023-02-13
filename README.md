@@ -2,7 +2,7 @@
 
 ## About The Project
 
-A simple rock-paper-scissors game I made by following TheOdinProject course.
+A simple rock-paper-scissors game website I made by following TheOdinProject course.
 
 ## Live Preview
 
