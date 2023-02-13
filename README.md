@@ -1,7 +1,15 @@
 # Rock Paper Scissors
 
-## First project in Fundamentals path on full-stack web dev course, TheOdinProject
+## About The Project
 
-A simple Rock Paper Scissors game I made by following TheOdinProject course.
+A simple rock-paper-scissors game I made by following TheOdinProject course.
 
-## live demo
+## Live Preview
+
+https://protegee1505.github.io/Rock-Paper-Scissors/
+
+### Built With
+
+- HTML
+- CSS
+- Javascript
